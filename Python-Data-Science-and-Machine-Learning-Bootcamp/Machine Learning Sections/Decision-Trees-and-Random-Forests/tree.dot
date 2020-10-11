@@ -1,0 +1,45 @@
+digraph ID3_Tree {
+"0" [shape=box, style=filled, label="Febre
+", weight=1]
+"1" [shape=box, style=filled, label="Mais_Exames
+(2)
+", weight=2]
+0 -> 1 [ label = "<=1.50"];
+"2" [shape=box, style=filled, label="Dor muscular
+", weight=2]
+0 -> 2 [ label = ">1.50"];
+"3" [shape=box, style=filled, label="Urgência
+(2)
+", weight=3]
+2 -> 3 [ label = "<=1.50"];
+"4" [shape=box, style=filled, label="Coceira
+", weight=3]
+2 -> 4 [ label = ">1.50"];
+"5" [shape=box, style=filled, label="Manchas
+", weight=4]
+4 -> 5 [ label = "<=2.50"];
+"6" [shape=box, style=filled, label="Emergência
+(1/1)
+", weight=5]
+5 -> 6 [ label = "<=1.50"];
+"7" [shape=box, style=filled, label="Emergência
+(1/1)
+", weight=5]
+5 -> 7 [ label = ">1.50"];
+"8" [shape=box, style=filled, label="Manchas
+", weight=4]
+4 -> 8 [ label = ">2.50"];
+"9" [shape=box, style=filled, label="Emergência
+(2/1)
+", weight=5]
+8 -> 9 [ label = "<=1.50"];
+"10" [shape=box, style=filled, label="Emergência
+(1)
+", weight=5]
+8 -> 10 [ label = ">1.50"];
+{rank=same; 0;};
+{rank=same; 1;2;};
+{rank=same; 3;4;};
+{rank=same; 5;8;};
+{rank=same; 6;7;9;10;};
+}
